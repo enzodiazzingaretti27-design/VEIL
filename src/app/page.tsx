@@ -4,23 +4,18 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Lenis from "lenis";
 import { useEffect, useState } from "react";
 
+const basePath = process.env.NODE_ENV === "production" ? "/VEIL" : "";
+const media = (path: string) => `${basePath}${path}`;
+
 const images = {
-  hero:
-    "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=2400&q=85",
-  industrial:
-    "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1800&q=80&sat=-100",
-  portrait:
-    "https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1800&q=85&sat=-100",
-  shadow:
-    "https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=1800&q=85&sat=-100",
-  texture:
-    "https://images.unsplash.com/photo-1518005020951-eccb494ad742?auto=format&fit=crop&w=1800&q=85&sat=-100",
-  night:
-    "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=1800&q=85&sat=-100",
-  concrete:
-    "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1800&q=85&sat=-100",
-  metal:
-    "https://images.unsplash.com/photo-1511818966892-d7d671e672a2?auto=format&fit=crop&w=1800&q=85&sat=-100",
+  hero: media("/media/hero.jpg"),
+  industrial: media("/media/industrial.jpg"),
+  portrait: media("/media/portrait.jpg"),
+  shadow: media("/media/shadow.jpg"),
+  texture: media("/media/texture.jpg"),
+  night: media("/media/night.jpg"),
+  concrete: media("/media/concrete.jpg"),
+  metal: media("/media/metal.jpg"),
 };
 
 const collections = [
